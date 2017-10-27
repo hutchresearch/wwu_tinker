@@ -3,8 +3,9 @@
 # Quick demonstration of the tinker Python API. We can create experiments,
 # variables, and print the underlying JSON representations.
 
-from tinker import *
-
+from tinker.variable import *
+from tinker.experiment import *
+from tinker.configuration import *
 
 ################# Simple Experiment ######################
 '''

@@ -1,9 +1,11 @@
 #!/usr/bin/python
 #
-# Optimizing the hyperparameters of a simple TensorFlow model via Tinker
+# Optimizing the hyperparameters of a simple TensorFlow model via tinker
 # @author: Ryan Baerwolf (rdbaerwolf@gmail.com, baerwor@wwu.edu)
 
-from tinker import Experiment, Variable
+from tinker.experiment import Experiment
+from tinker.variable import Variable
+
 from mlp_iris import MLP
 
 """iris_expt = Experiment("iris_expt")
