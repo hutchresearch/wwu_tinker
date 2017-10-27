@@ -7,7 +7,6 @@ from tinker.variable import *
 from tinker.experiment import *
 from tinker.configuration import *
 
-
 ################# Simple Experiment ######################
 '''
 expt = Experiment("simple_expt")

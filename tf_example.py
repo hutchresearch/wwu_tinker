@@ -5,6 +5,7 @@
 
 from tinker.experiment import Experiment
 from tinker.variable import Variable
+
 from mlp_iris import MLP
 
 """iris_expt = Experiment("iris_expt")
