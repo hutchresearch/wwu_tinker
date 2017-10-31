@@ -8,4 +8,7 @@ setup(name='tinker',
       author_email='brian.hutchinson@wwu.edu',
       license='MIT',
       packages=['tinker'],
+      install_requires=[
+          'requests',
+      ],
       zip_safe=False)
