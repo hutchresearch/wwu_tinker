@@ -1,10 +1,10 @@
-from configuration import Configuration
-from variable import Variable
 import json
 import requests
 import traceback
 
-from __init__ import server
+from .configuration import Configuration
+from .variable import Variable
+from .__init__ import server
 
 class Experiment:
     def __init__(self, name, load_fn=None, optimizer="random"):
