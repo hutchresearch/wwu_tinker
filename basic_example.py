@@ -8,7 +8,7 @@ def cost_function(x,y):
 
 # Test the cost function.
 z = cost_function(3,2)
-print z
+print (z)
 
 # Now we define our experiment
 test_experiment = Experiment('test_experiment', optimizer="bayesian")
@@ -19,5 +19,5 @@ experiment_id = test_experiment.submit()
 for i in range(50):
         config = test_experiment.next_configuration()
         result = cost_function(config['x'],config['y'])
-        print result
+        print (result)
         config.report_loss(result)

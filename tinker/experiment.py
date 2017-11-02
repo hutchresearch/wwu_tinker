@@ -2,6 +2,7 @@ import json
 import requests
 import traceback
 
+from .configuration import Configuration
 from .variable import Variable
 from .__init__ import server
 

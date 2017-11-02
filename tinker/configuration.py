@@ -34,7 +34,7 @@ class Configuration():
 
         value = self.data["config"][key]
         if value is None:
-            print "The key '%s' does not exist in this configuration"
+            print ("The key '%s' does not exist in this configuration")
         else:
             return self.data["config"][key]
 
@@ -65,7 +65,7 @@ class Configuration():
 
         value = self.data["config"][key]
         if value is None:
-            print "The key '%s' does not exist in this configuration"
+            print ("The key '%s' does not exist in this configuration")
         else:
             return self.data["config"][key]
 
