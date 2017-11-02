@@ -1,7 +1,8 @@
 import json
 import requests
 import traceback
-from __init__ import server
+
+from .__init__ import server
 
 
 class Configuration():

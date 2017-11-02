@@ -3,9 +3,8 @@
 # Quick demonstration of the tinker Python API. We can create experiments,
 # variables, and print the underlying JSON representations.
 
-from tinker.variable import *
-from tinker.experiment import *
-from tinker.configuration import *
+from tinker import experiment
+from tinker import variable
 
 ################# Simple Experiment ######################
 '''
@@ -46,10 +45,10 @@ impostor = Variable("Bill", "enum", values=["foo", "bar"])
 
 ############# Submit Experiment to Server ################
 
-expt = Experiment("submit_expt") 
-int_var = Variable("var1", "int", v_range=[0, 10])
+expt = experiment.Experiment("submit_expt") 
+int_var = variable.Variable("var1", "int", v_range=[0, 10])
 expt.add_var(int_var)
-print "EXPT ID: %s" % expt.submit()
+print ("EXPT ID: %s" % expt.submit())
 
 ############# Request A Configuration To Evaluate ########
 config = expt.next_configuration()
