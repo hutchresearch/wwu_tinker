@@ -1,13 +1,17 @@
 from setuptools import setup
 
-setup(name='tinker',
-      version='0.1',
+setup(name='wwu_tinker',
+      version='0.1a1',
       description='Free hyperparameter optimization webservice',
-      url='http://github.com/hutchresearch/tinker',
+      url='http://github.com/hutchresearch/wwu_tinker',
       author='WWU',
       author_email='brian.hutchinson@wwu.edu',
       license='MIT',
-      packages=['tinker'],
+      classifiers=[
+          'Development Status :: 3 - Alpha',
+          'Programming Language :: Python :: 3',
+      ],
+      packages=['wwu_tinker'],
       install_requires=[
           'requests',
       ],
