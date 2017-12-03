@@ -7,7 +7,7 @@ from .variable import Variable
 from .__init__ import server
 
 class Experiment:
-    def __init__(self, name, load_fn=None, optimizer="random"):
+    def __init__(self, name="Experiment", load_fn=None, optimizer="random", expt_id = None):
 
         """
         Initialize a new experiment with the given name. If load_fn
@@ -18,6 +18,7 @@ class Experiment:
             name (str): The name of the Experiment to be created
             load_fn (str): Name of the file in which Experiment JSON is saved
             optimizer (str): Name of the optimizer that the user would like to use. This can be set later.
+            expt_id (str) : ID of already initialized experiment
 
         Todo: Add a validator for loading experiment files? Or just let
               the user be responsible for not messing it up?
@@ -28,7 +29,7 @@ class Experiment:
         else:
             self._data = {"expt_name": name, "vars": {}, "optimizer": optimizer}
 
-        self.experiment_id = None
+        self.experiment_id = expt_id
 
     def __str__(self):
         return json.dumps(self._data, indent=2)
@@ -141,7 +142,7 @@ class Experiment:
 
         r = requests.post(server + "setup", json=self._data)
         response_json = r.json()
-        self.experiment_id = response_json["expt_id"]
+        self.experiment_id = str(response_json["expt_id"])
         return self.experiment_id
 
     def next_configuration(self, order_size=1):
@@ -162,3 +163,33 @@ class Experiment:
         r = requests.post(server + "request", json=payload)
         response_json = r.json()
         return Configuration(json.loads(r.text))
+
+    def get_evaluation_history(self):
+        """
+            Requests the next evaluation from the server.
+
+            Args:
+                None
+            Returns:
+                List of JSON's: Containing each configuration and the matching result.
+                Example [{"config" : {...}, "result : "..."}, {...}, ... ]
+
+            """
+        payload = {"expt_id" : self.experiment_id}
+        response = requests.post(server + "request_history", json=payload)
+        return response.json()
+
+    def get_best_evaluation(self):
+        """
+            Requests the best evaluation so far from the server.
+
+            Args:
+                None
+            Returns:
+                JSON/dict: Contains best configuration and matching reuslt.
+        """
+        payload = {"expt_id" : self.experiment_id}
+        response = requests.post(server + "request_best_eval", json=payload)
+        return response.json()
+
+
