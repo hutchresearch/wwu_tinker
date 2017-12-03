@@ -7,7 +7,7 @@ from .variable import Variable
 from .__init__ import server
 
 class Experiment:
-    def __init__(self, name="Experiment", load_fn=None, optimizer="random", expt_id = None):
+    def __init__(self, name="Experiment", load_fn=None, optimizer="random", expt_id=None):
 
         """
         Initialize a new experiment with the given name. If load_fn
@@ -166,7 +166,7 @@ class Experiment:
 
     def get_evaluation_history(self):
         """
-            Requests the next evaluation from the server.
+            Requests a list of all complete evaluations from the server.
 
             Args:
                 None
