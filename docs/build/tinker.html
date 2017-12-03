@@ -1,0 +1,416 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>tinker package &mdash; Tinker  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Tinker  documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Tinker
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">tinker package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-tinker.configuration">tinker.configuration module</a></li>
+<li><a class="reference internal" href="#module-tinker.experiment">tinker.experiment module</a></li>
+<li><a class="reference internal" href="#module-tinker.variable">tinker.variable module</a></li>
+<li><a class="reference internal" href="#module-tinker">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Tinker</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>tinker package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/tinker.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tinker-package">
+<h1>tinker package<a class="headerlink" href="#tinker-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-tinker.configuration">
+<span id="tinker-configuration-module"></span><h2>tinker.configuration module<a class="headerlink" href="#module-tinker.configuration" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="tinker.configuration.Configuration">
+<em class="property">class </em><code class="descclassname">tinker.configuration.</code><code class="descname">Configuration</code><span class="sig-paren">(</span><em>config_json</em><span class="sig-paren">)</span><a class="headerlink" href="#tinker.configuration.Configuration" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="tinker.configuration.Configuration.get_eval_id">
+<code class="descname">get_eval_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tinker.configuration.Configuration.get_eval_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves the ID corresponding to the evaluation in the database</p>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>str: Evaluation ID</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="tinker.configuration.Configuration.get_value">
+<code class="descname">get_value</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#tinker.configuration.Configuration.get_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves the value associated with a given variable.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>name (str): Name of the variable to retrieve</dd>
+<dt>Returns:</dt>
+<dd>str: Value of the variable with key ‘name’</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="tinker.configuration.Configuration.report_loss">
+<code class="descname">report_loss</code><span class="sig-paren">(</span><em>loss</em><span class="sig-paren">)</span><a class="headerlink" href="#tinker.configuration.Configuration.report_loss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a loss value to this configuration and returns it to the server.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>loss (float): Loss generated by running a model with this configuration</dd>
+</dl>
+<p>Todo: There should be something returned from the post request indicate success/failure</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tinker.experiment">
+<span id="tinker-experiment-module"></span><h2>tinker.experiment module<a class="headerlink" href="#module-tinker.experiment" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="tinker.experiment.Experiment">
+<em class="property">class </em><code class="descclassname">tinker.experiment.</code><code class="descname">Experiment</code><span class="sig-paren">(</span><em>name</em>, <em>load_fn=None</em>, <em>optimizer='random'</em><span class="sig-paren">)</span><a class="headerlink" href="#tinker.experiment.Experiment" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="tinker.experiment.Experiment.add_var">
+<code class="descname">add_var</code><span class="sig-paren">(</span><em>var</em><span class="sig-paren">)</span><a class="headerlink" href="#tinker.experiment.Experiment.add_var" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a Variable to this Experiment.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>var (Variable): Any valid variable</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="tinker.experiment.Experiment.add_vars">
+<code class="descname">add_vars</code><span class="sig-paren">(</span><em>var_list</em><span class="sig-paren">)</span><a class="headerlink" href="#tinker.experiment.Experiment.add_vars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simultaneously adds multiple variables to this Experiment.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>var_list (list): The list of Variable objects to be added</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="tinker.experiment.Experiment.data">
+<code class="descname">data</code><a class="headerlink" href="#tinker.experiment.Experiment.data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tinker.experiment.Experiment.load_expt">
+<code class="descname">load_expt</code><span class="sig-paren">(</span><em>file_name</em><span class="sig-paren">)</span><a class="headerlink" href="#tinker.experiment.Experiment.load_expt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the JSON in file_name into this Experiment.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>file_name (str): Name of the file from which to load an Experiment JSON</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="tinker.experiment.Experiment.next_configuration">
+<code class="descname">next_configuration</code><span class="sig-paren">(</span><em>order_size=1</em><span class="sig-paren">)</span><a class="headerlink" href="#tinker.experiment.Experiment.next_configuration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Requests the next configuration for evaluation from the server.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>order_size (int): Number of configurations to be retrieved</dd>
+<dt>Returns:</dt>
+<dd><dl class="first last docutils">
+<dt>JSON/dict: Dictionary of hyperparameter values for all variables</dt>
+<dd>in the experiment</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="tinker.experiment.Experiment.save_expt">
+<code class="descname">save_expt</code><span class="sig-paren">(</span><em>file_name</em><span class="sig-paren">)</span><a class="headerlink" href="#tinker.experiment.Experiment.save_expt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves this Experiment in JSON format to the specified file.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>file_name (str): Name of the file in which to save the JSON</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="tinker.experiment.Experiment.set_optimizer">
+<code class="descname">set_optimizer</code><span class="sig-paren">(</span><em>optimizer</em><span class="sig-paren">)</span><a class="headerlink" href="#tinker.experiment.Experiment.set_optimizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the optimizer for the for the experiment. Verifies that it is a valid optimizer.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>optimizer (string): The optimizer you would like to set up for your experiment.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="tinker.experiment.Experiment.submit">
+<code class="descname">submit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tinker.experiment.Experiment.submit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends the Experiment JSON to the server to be inserted into
+the database.</p>
+<p>Todo: Make sure that the user isn’t inserting the experiment multiple times</p>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>str: ID corresponding to the server-side experiment</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="tinker.experiment.Experiment.to_json_string">
+<code class="descname">to_json_string</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tinker.experiment.Experiment.to_json_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the internal dict representation of the Experiment
+to a JSON string for sending.</p>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>str: The string representation of the underlying JSON</dd>
+<dt>Todo: Is ensure_ascii=True necessary? We don’t want random</dt>
+<dd>hex floating around in our messages</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tinker.variable">
+<span id="tinker-variable-module"></span><h2>tinker.variable module<a class="headerlink" href="#module-tinker.variable" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="tinker.variable.Variable">
+<em class="property">class </em><code class="descclassname">tinker.variable.</code><code class="descname">Variable</code><span class="sig-paren">(</span><em>name</em>, <em>v_type</em>, <em>v_range=None</em>, <em>values=None</em>, <em>step_size=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tinker.variable.Variable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="tinker.variable.Variable.name">
+<code class="descname">name</code><a class="headerlink" href="#tinker.variable.Variable.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="tinker.variable.Variable.range">
+<code class="descname">range</code><a class="headerlink" href="#tinker.variable.Variable.range" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="tinker.variable.Variable.step_size">
+<code class="descname">step_size</code><a class="headerlink" href="#tinker.variable.Variable.step_size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="tinker.variable.Variable.type">
+<code class="descname">type</code><a class="headerlink" href="#tinker.variable.Variable.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="tinker.variable.Variable.values">
+<code class="descname">values</code><a class="headerlink" href="#tinker.variable.Variable.values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="tinker.variable.Variable.var_names">
+<code class="descname">var_names</code><em class="property"> = set([])</em><a class="headerlink" href="#tinker.variable.Variable.var_names" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tinker">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-tinker" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Ryan Baerwolf.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
