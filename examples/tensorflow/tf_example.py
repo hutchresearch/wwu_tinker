@@ -3,8 +3,8 @@
 # Optimizing the hyperparameters of a simple TensorFlow model via tinker
 # @author: Ryan Baerwolf (rdbaerwolf@gmail.com, baerwor@wwu.edu)
 
-from tinker.experiment import Experiment
-from tinker.variable import Variable
+from wwu_tinker.experiment import Experiment
+from wwu_tinker.variable import Variable
 
 from mlp_iris import MLP
 
