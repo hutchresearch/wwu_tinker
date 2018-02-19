@@ -1,5 +1,5 @@
-from tinker.experiment import Experiment
-from tinker.variable import Variable
+from wwu_tinker.experiment import Experiment
+from wwu_tinker.variable import Variable
 
 # This is a simple test to see how the database works.
 # First we define a cost function and then we use random search to find its minimum.
