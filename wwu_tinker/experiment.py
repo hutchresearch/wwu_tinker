@@ -1,13 +1,14 @@
 import json
 import requests
-import traceback
 
 from .configuration import Configuration
 from .variable import Variable
 from .__init__ import server
 
+
 class Experiment:
-    def __init__(self, name="Experiment", load_fn=None, optimizer="random", expt_id=None):
+    def __init__(self, name="Experiment", load_fn=None,
+                 optimizer="random", expt_id=None):
 
         """
         Initialize a new experiment with the given name. If load_fn
@@ -17,7 +18,8 @@ class Experiment:
         Args:
             name (str): The name of the Experiment to be created
             load_fn (str): Name of the file in which Experiment JSON is saved
-            optimizer (str): Name of the optimizer that the user would like to use. This can be set later.
+            optimizer (str): Name of the optimizer that the
+                             user would like to use. This can be set later.
             expt_id (str) : ID of already initialized experiment
 
         Todo: Add a validator for loading experiment files? Or just let
@@ -27,7 +29,8 @@ class Experiment:
         if load_fn is not None:
             self.load_expt(open(load_fn, 'r'))
         else:
-            self._data = {"expt_name": name, "vars": {}, "optimizer": optimizer}
+            self._data = {"expt_name": name, "vars": {},
+                          "optimizer": optimizer}
 
         self.experiment_id = expt_id
 
@@ -71,7 +74,8 @@ class Experiment:
         Load the JSON in file_name into this Experiment.
 
         Args:
-            file_name (str): Name of the file from which to load an Experiment JSON
+            file_name (str): Name of the file from
+                             which to load an Experiment JSON
         """
 
         self._data = json.load(open(file_name, 'r'))
@@ -85,7 +89,7 @@ class Experiment:
             var (Variable): Any valid variable
         """
 
-        if isinstance(var, Variable) == False:
+        if isinstance(var, Variable) is False:
             print("Error: var must be of type Variable")
             return
         var_dict = {}
@@ -107,8 +111,8 @@ class Experiment:
             var_list (list): The list of Variable objects to be added
         """
 
-        if isinstance(var_list, list) == False:
-            print("Error: var_list must be a list of Variables!")
+        if isinstance(var_list, list) is False:  # We have a single element
+            self.add_ar(var_list)
             return
         else:
             for var in var_list:
@@ -117,10 +121,12 @@ class Experiment:
     def set_optimizer(self, optimizer):
 
         """
-        Sets the optimizer for the for the experiment. Verifies that it is a valid optimizer.
+        Sets the optimizer for the for the experiment.
+        Verifies that it is a valid optimizer.
 
         Args:
-            optimizer (string): The optimizer you would like to set up for your experiment.
+            optimizer (string): The optimizer you would
+            like to set up for your experiment.
         """
         if optimizer in ["random", "bayesian", "grid", "horde", "latin_hyper"]:
             self._data["optimizer"] = optimizer
@@ -133,7 +139,8 @@ class Experiment:
         Sends the Experiment JSON to the server to be inserted into
         the database.
 
-        Todo: Make sure that the user isn't inserting the experiment multiple times
+        Todo: Make sure that the user isn't inserting
+              the experiment multiple times
 
         Returns:
             str: ID corresponding to the server-side experiment
