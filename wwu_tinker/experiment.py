@@ -112,7 +112,7 @@ class Experiment:
         """
 
         if isinstance(var_list, list) is False:  # We have a single element
-            self.add_ar(var_list)
+            self.add_var(var_list)
             return
         else:
             for var in var_list:
