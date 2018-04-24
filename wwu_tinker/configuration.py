@@ -88,3 +88,13 @@ class Configuration():
             traceback.print_stack()
             print("Error: reported loss must be a parsable float")
 
+    def __str__(self):
+        if len(self.data.keys()) <= 20:
+            keys = ""
+            data_keys = self.data.keys()
+            for key in data_keys:
+                keys += "{0}, ".format(key)
+            return keys
+        else:
+            return "More than 20 keys found. Too many to print"
+
