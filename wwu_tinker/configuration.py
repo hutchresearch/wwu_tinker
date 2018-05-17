@@ -2,11 +2,10 @@ import json
 import requests
 import traceback
 
-from .__init__ import server
-
+from .__init__ import servers
 
 class Configuration():
-    def __init__(self, config_json):
+    def __init__(self, config_json, mode = 'production'):
 
         """
         Creates a new Configuration object given the raw JSON
@@ -19,6 +18,7 @@ class Configuration():
         """
 
         self.data = config_json
+        self.mode = mode
 
     def __getitem__(self, key):
 
@@ -79,6 +79,8 @@ class Configuration():
 
         Todo: There should be something returned from the post request indicate success/failure
         """
+    
+        server = servers[self.mode]
 
         try:
             loss = float(loss)
