@@ -199,4 +199,27 @@ class Experiment:
         response = requests.post(server + "request_best_eval", json=payload)
         return response.json()
 
+    def report_configuration(self, configuration, result):
+        """
+        Reports hand-tuned configurations and losses
+
+        :param configuration:
+        :param result:
+        :return:
+        """
+        payload = dict({"expt_id": self.experiment_id,
+                        "config": configuration,
+                        "result": result})
+        response = requests.post(server + "report_config", json=payload)
+        print(response)
+        return response.json()
+
+    def set_experiment_id(self, experiment_id):
+        """
+        Updates the experiment id so that a user can continue from an existing experiment.
+
+        :param experiment_id:
+        :return:
+        """
+        self.experiment_id = experiment_id
 
