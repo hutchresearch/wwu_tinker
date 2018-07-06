@@ -2,4 +2,4 @@ import json
 import requests
 import traceback
 
-server = "http://ml-tuning.proj.cs.wwu.edu:6060/"
+server = "http://tinker.cs.wwu.edu:6060/"
